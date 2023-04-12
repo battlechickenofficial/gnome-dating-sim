@@ -22,4 +22,9 @@ public class CamTarg : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 50 * smoothSpeed * Time.deltaTime);
         }
     }
+
+    public void TargetUpdate(Target t) {
+        target = t.transform;
+        offset = t.newOffset;
+    }
 }

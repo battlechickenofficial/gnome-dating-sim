@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class TextLine : MonoBehaviour
 {
-    public string speaker;
+    public Transform camTarget;
     public string[] text;
 }

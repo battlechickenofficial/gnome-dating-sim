@@ -11,16 +11,19 @@ public class DialougeController : MonoBehaviour
 
     public RectTransform textbox, targetBoxPosition, closedBoxPosition;
     public AudioSource _audio, _audio2;
-    public TMP_Text text, speaker;
+    public TMP_Text text;
     public float speed;
     private int count = 0;
-    private int textId = 0;
+    public int textId = 0;
 
     public List<TextLine> toDisplay = new List<TextLine>();
 
     public bool closeBoxWhenDone = true;
     private bool textPlaying = false;
     private bool textWriting = false;
+
+
+    public CamTarg cam;
 
     public void AddToTimeline() {
         currTimeline++;
@@ -72,7 +75,7 @@ public class DialougeController : MonoBehaviour
 
     private IEnumerator ReadLine()
     {
-        speaker.text = toDisplay[textId].speaker;
+        cam.target = toDisplay[textId].camTarget;
         textWriting = true;
         foreach(char c in toDisplay[textId].text[count])
         {
