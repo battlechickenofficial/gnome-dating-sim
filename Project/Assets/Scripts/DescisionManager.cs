@@ -18,7 +18,7 @@ public class DescisionManager : MonoBehaviour
         if(accepted) {
             acceptTimeline.SetActive(true);
         } else {
-            declineTimeline.SetActive(false);
+            declineTimeline.SetActive(true);
         }
     }
 
