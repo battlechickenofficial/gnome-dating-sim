@@ -14,11 +14,13 @@ public class DescisionManager : MonoBehaviour
     }
 
     public void Choose(bool accepted) {
-        desciding = false;
-        if(accepted) {
-            acceptTimeline.SetActive(true);
-        } else {
-            declineTimeline.SetActive(true);
+        if(desciding) {
+            desciding = false;
+            if(accepted) {
+                acceptTimeline.SetActive(true);
+            } else {
+                declineTimeline.SetActive(true);
+            }
         }
     }
 
